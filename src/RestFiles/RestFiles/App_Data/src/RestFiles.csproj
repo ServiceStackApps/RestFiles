@@ -81,6 +81,7 @@
   <ItemGroup>
     <Content Include="App_Data\files\default.htm" />
     <Content Include="App_Data\files\dtos\Files.cs.txt" />
+    <Content Include="App_Data\files\dtos\RestFiles.ServiceModel.csproj" />
     <Content Include="App_Data\files\dtos\RevertFiles.cs.txt" />
     <Content Include="App_Data\files\dtos\Types\File.cs.txt" />
     <Content Include="App_Data\files\dtos\Types\FileResult.cs.txt" />
@@ -91,27 +92,10 @@
     <Content Include="App_Data\files\services\RevertFilesService.cs.txt" />
     <Content Include="App_Data\files\tests\AsyncRestClientTests.cs.txt" />
     <Content Include="App_Data\files\tests\SyncRestClientTests.cs.txt" />
-    <Content Include="App_Data\src\Css\default.css" />
-    <Content Include="App_Data\src\default.htm" />
-    <Content Include="App_Data\src\RestFiles.csproj" />
     <Content Include="crossdomain.xml" />
     <Content Include="Global.asax" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\src\Global.asax.cs" />
-    <Content Include="App_Data\src\RestFiles.ServiceInterface\AppConfig.cs" />
-    <Content Include="App_Data\src\RestFiles.ServiceInterface\FilesService.cs" />
-    <Content Include="App_Data\src\RestFiles.ServiceInterface\RevertFilesService.cs" />
-    <Content Include="App_Data\src\RestFiles.ServiceInterface\Support\FileExtensions.cs" />
-    <Content Include="App_Data\src\RestFiles.ServiceModel\Files.cs" />
-    <Content Include="App_Data\src\RestFiles.ServiceModel\RevertFiles.cs" />
-    <Content Include="App_Data\src\RestFiles.ServiceModel\Types\File.cs" />
-    <Content Include="App_Data\src\RestFiles.ServiceModel\Types\FileResult.cs" />
-    <Content Include="App_Data\src\RestFiles.ServiceModel\Types\Folder.cs" />
-    <Content Include="App_Data\src\RestFiles.ServiceModel\Types\FolderResult.cs" />
-    <Content Include="App_Data\src\RestFiles.Tests\AsyncRestClientTests.cs" />
-    <Content Include="App_Data\src\RestFiles.Tests\Support\RestFilesHttpListener.cs" />
-    <Content Include="App_Data\src\RestFiles.Tests\SyncRestClientTests.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -153,8 +137,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="App_Data\files\dtos\packages.config" />
     <Content Include="App_Data\files\README.md" />
-    <Content Include="App_Data\src\README.md" />
     <None Include="Properties\PublishProfiles\WebDeploy.pubxml" />
     <None Include="README.md" />
   </ItemGroup>

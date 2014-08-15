@@ -24,21 +24,21 @@ namespace RestFiles.ServiceInterface
                 Directory.Delete(rootDir, true);
             }
 
-            CopyFiles(rootDir, "~/App_Data/src".MapHostAbsolutePath(), ".cs", ".htm", ".md");
+            CopyFiles(rootDir, "~/".MapHostAbsolutePath(), ".cs", ".htm", ".md");
 
             var servicesDir = Path.Combine(rootDir, "services");
-            CopyFiles(servicesDir, "~/App_Data/src/RestFiles.ServiceInterface/".MapHostAbsolutePath(), "Service.cs");
+            CopyFiles(servicesDir, "~/../RestFiles.ServiceInterface/".MapHostAbsolutePath(), "Service.cs");
 
             var testsDir = Path.Combine(rootDir, "tests");
-            CopyFiles(testsDir, "~/App_Data/src/RestFiles.Tests/".MapHostAbsolutePath(), ".cs");
+            CopyFiles(testsDir, "~/../RestFiles.Tests/".MapHostAbsolutePath(), ".cs");
 
             var dtosDir = Path.Combine(rootDir, "dtos");
 
             var opsDtoPath = dtosDir;
-            CopyFiles(opsDtoPath, "~/App_Data/src/RestFiles.ServiceModel/".MapHostAbsolutePath());
+            CopyFiles(opsDtoPath, "~/../RestFiles.ServiceModel/".MapHostAbsolutePath());
 
             var typesDtoPath = Path.Combine(dtosDir, "Types");
-            CopyFiles(typesDtoPath, "~/App_Data/src/RestFiles.ServiceModel/Types/".MapHostAbsolutePath());
+            CopyFiles(typesDtoPath, "~/../RestFiles.ServiceModel/Types/".MapHostAbsolutePath());
 
             return new RevertFilesResponse();
         }
