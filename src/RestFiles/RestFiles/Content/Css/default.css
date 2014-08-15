@@ -81,9 +81,6 @@ button {  width: auto; overflow: visible; }
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
 
-/* Primary Styles
-Author: Demis Bellot (demis.bellot@gmail.com)
-*/
 .ib
 {
     position: relative;
@@ -100,14 +97,16 @@ Author: Demis Bellot (demis.bellot@gmail.com)
 }
 BODY
 {
-    background: url(../Images/bg-body-1024.png) repeat-y;
-    font: normal normal normal 13.34px/normal helvetica, arial, freesans, clean, sans-serif;
+    background: #fff url(https://raw.githubusercontent.com/ServiceStack/Assets/master/img/apps/bg-body-1024.png) repeat-y top left;
+    font: 16px/22px "Helvetica Neue", arial, freesans, clean, sans-serif;
+    color: #444;
+    width: 860px;
 }
 #github
 {
     position: absolute;
-    top: 40px;
-    left: 755px;
+    top: 10px;
+    left: 710px;
 }
 #header-links {
     top: 10px;
@@ -497,7 +496,7 @@ A.file:hover B.del
 
 #footer
 {
-    background: #f1f1f1 url(../Images/bg-footer.png) repeat-x 0 0;	
+	background: #f1f1f1 url(https://raw.githubusercontent.com/ServiceStack/Assets/master/img/apps/bg-footer.png) repeat-x 0 0;
     height: 60px;
     position: fixed;
     bottom: 0;

@@ -130,17 +130,12 @@
   <ItemGroup>
     <Content Include="Content\Css\default.css" />
     <Content Include="default.htm" />
-    <Content Include="Content\Images\bg-body-1024.png" />
-    <Content Include="Content\Images\bg-footer.png" />
     <Content Include="Content\Images\bg_gradient.gif" />
-    <Content Include="Content\Images\btn-github.png" />
     <Content Include="Content\Images\Chrome_logo.png" />
     <Content Include="Content\Images\delete_icon.png" />
     <Content Include="Content\Images\dir.png" />
     <Content Include="Content\Images\file_head.gif" />
     <Content Include="Content\Images\ie8_logo.jpg" />
-    <Content Include="Content\Images\logo-txt-small.png" />
-    <Content Include="Content\Images\Mono-powered-big.png" />
     <Content Include="Content\Images\Mozilla_logo.png" />
     <Content Include="Content\Images\Opera_logo.png" />
     <Content Include="Content\Images\public.png" />
