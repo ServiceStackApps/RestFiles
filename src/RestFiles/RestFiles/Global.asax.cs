@@ -34,9 +34,7 @@ namespace RestFiles
             container.Register(config);
 
             if (!Directory.Exists(config.RootDirectory))
-            {
                 Directory.CreateDirectory(config.RootDirectory);
-            }
         }
     }
     
@@ -45,7 +43,7 @@ namespace RestFiles
         protected void Application_Start(object sender, EventArgs e)
         {
             //Initialize your application
-            (new AppHost()).Init();
+            new AppHost().Init();
         }
     }
 }
