@@ -12,46 +12,51 @@
         top: 5px; left: 10px;">
         <img src="https://raw.githubusercontent.com/ServiceStack/Assets/master/img/apps/icon-home.jpg" alt="ServiceStack Home" /></a>
     <div id="header">
-        <a id="github" href="https://github.com/ServiceStackApps/RestFiles"><img src="https://raw.githubusercontent.com/ServiceStack/Assets/master/img/apps/btn-github.png" alt="GitHub Project" /></a>
+        <a id="github" title="View source on GitHub" href="https://github.com/ServiceStackApps/RestFiles"><img src="/Content/Images/btn-github.png" alt="GitHub Project" /></a>
     </div>
     <div id="title">
         <h1>
-            <a href="https://servicestack.net">ServiceStack</a><b>/</b><a class="active" href="./">The
-                Rest Files</a></h1>
+            <a href="https://servicestack.net">ServiceStack</a><b>/</b>
+            <a class="active" href="./">
+                Rest Files
+            </a>
+        </h1>
     </div>
     <div id="info">
         <div id="net">
-            <strong>.NET Clients can access the File Service API with:</strong> <a href="#!files/tests/AsyncRestClientTests.cs.txt">
-                Async C# client examples</a> <a href="#!files/tests/SyncRestClientTests.cs.txt">Sync
-                    C# client examples</a>
+            <strong>.NET Clients can access the File Service API with:</strong> 
+            <a href="#!files/tests/AsyncRestClientTests.cs.txt">
+                Async C# client examples
+            </a> 
+            <a href="#!files/tests/SyncRestClientTests.cs.txt">Sync
+                C# client examples
+            </a>
         </div>
         <h3>
-            GitHub-like browser with complete remote file management over REST in <a href="https://github.com/ServiceStackApps/RestFiles/blob/master/src/RestFiles/RestFiles/default.htm">
-                1 page jQuery</a> + <a href="https://github.com/ServiceStackApps/RestFiles/blob/master/src/RestFiles/RestFiles.ServiceInterface/FilesService.cs">
-                    1 page C#</a>
+            GitHub-like browser with complete remote file management over REST in 
+            <a href="https://github.com/ServiceStackApps/RestFiles/blob/master/src/RestFiles/RestFiles/default.htm">
+                1 page jQuery
+            </a> + 
+            <a href="https://github.com/ServiceStackApps/RestFiles/blob/master/src/RestFiles/RestFiles.ServiceInterface/FilesService.cs">
+                1 page C#
+            </a>
         </h3>
         <div id="doc">
             <h4>
                 <a href="./metadata">The REST /files web service API:</a></h4>
             <dl>
                 <dt><b>GET</b> <a href="./files/dtos/Types">/path/to/folder</a></dt>
-                <dd>
-                    Directory listing at server</dd>
+                <dd>Directory listing at server</dd>
                 <dt><b>GET</b> <a href="./files/README.md">/path/to/file.txt</a></dt>
-                <dd>
-                    Info and contents of text file at path</dd>
+                <dd>Info and contents of text file at path</dd>
                 <dt><b>POST</b> /path/to/newfolder (no-body)</dt>
-                <dd>
-                    Create a directory at newfolder path</dd>
+                <dd>Create a directory at newfolder path</dd>
                 <dt><b>POST</b> /path/to/folder (multipart/form-data)</dt>
-                <dd>
-                    Upload file at folder path</dd>
+                <dd>Upload file at folder path</dd>
                 <dt><b>PUT</b> /path/to/file.txt</dt>
-                <dd>
-                    Replace contents of text file at path</dd>
+                <dd>Replace contents of text file at path</dd>
                 <dt><b>DELETE</b> /path/to/folder</dt>
-                <dd>
-                    Delete folder at path</dd>
+                <dd>Delete folder at path</dd>
             </dl>
         </div>
     </div>
@@ -88,10 +93,10 @@
                 from one of the better alternatives below:
             </p>
             <a id="chrome" href="http://go.microsoft.com/fwlink/?LinkID=166937">
-                <img src="Content/Images/Chrome_logo.png" alt="Chrome" /></a> <a id="opera" href="http://go.microsoft.com/fwlink/?LinkID=166934">
-                    <img src="Content/Images/Opera_logo.png" alt="Opera" /></a> <a id="firefox" href="http://go.microsoft.com/fwlink/?LinkID=166932">
-                        <img src="Content/Images/Mozilla_logo.png" alt="Firefox" /></a> <a id="safari" href="http://go.microsoft.com/fwlink/?LinkID=166939">
-                            <img src="Content/Images/Safari_logo.jpg" alt="Safari" /></a>
+            <img src="Content/Images/Chrome_logo.png" alt="Chrome"/></a> <a id="opera" href="http://go.microsoft.com/fwlink/?LinkID=166934">
+            <img src="Content/Images/Opera_logo.png" alt="Opera" /></a> <a id="firefox" href="http://go.microsoft.com/fwlink/?LinkID=166932">
+            <img src="Content/Images/Mozilla_logo.png" alt="Firefox" /></a> <a id="safari" href="http://go.microsoft.com/fwlink/?LinkID=166939">
+            <img src="Content/Images/Safari_logo.jpg" alt="Safari" /></a>
         </div>
     </div>
     <script>
@@ -166,7 +171,7 @@
             }
             try {
                 $.ajaxFileUpload({
-                    url: href,
+                    url: href + "?format=json",
                     secureuri: false,
                     fileElementId: 'fileupload',
                     success: refresh
@@ -256,9 +261,6 @@
                 var jq1 = $(".results-1"), jq2 = $("." + nextCls), el1 = jq1[0], el2 = jq2[0];
                 if (el1 && el2) {
                     jqLs.css({ "min-height": Math.max(jq1.height(), jq2.height()) + "px" });
-
-                    jq1.addClass(navBack ? "slide-right" : "slide-left");
-                    jq2.addClass(navBack ? "slide-right" : "slide-left");
 
                     setTimeout(function () {
                         jqLs.children().first().remove();

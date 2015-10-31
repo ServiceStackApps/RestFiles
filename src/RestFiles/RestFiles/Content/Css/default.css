@@ -105,8 +105,11 @@ BODY
 #github
 {
     position: absolute;
-    top: 10px;
-    left: 710px;
+    top: 15px;
+    left: 855px;
+}
+#github img {
+    height: 80px;
 }
 #header-links {
     top: 10px;
@@ -314,20 +317,6 @@ A.file:hover B.del
     position: absolute;
     top: 0;
     left: 930px;
-}
-.slide-left
-{
-    -webkit-transform: translate(-930px, 0);
-    -moz-transform: translate(-930px, 0);
-    -o-transform: translate(-930px, 0);
-    transform: translate(-930px, 0);
-}
-.slide-right
-{
-    -webkit-transform: translate(930px, 0);
-    -moz-transform: translate(930px, 0);
-    -o-transform: translate(930px, 0);
-    transform: translate(930px, 0);
 }
 
 #breadcrumb

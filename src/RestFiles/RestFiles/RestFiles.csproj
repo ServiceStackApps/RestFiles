@@ -95,6 +95,10 @@
     <Content Include="App_Data\src\Css\default.css" />
     <Content Include="App_Data\src\default.htm" />
     <Content Include="App_Data\src\RestFiles.csproj" />
+    <Content Include="Content\Images\1x1black-50a.png" />
+    <Content Include="Content\Images\close-icon.png" />
+    <Content Include="Content\Images\btn-github.png" />
+    <Content Include="Content\Images\rip-ie6-300.jpg" />
     <Content Include="crossdomain.xml" />
     <Content Include="Global.asax" />
   </ItemGroup>

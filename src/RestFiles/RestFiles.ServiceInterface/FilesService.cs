@@ -35,7 +35,7 @@ namespace RestFiles.ServiceInterface
             return response;
         }
 
-        public void Post(Files request)
+        public object Post(Files request)
         {
             var targetDir = GetPath(request);
 
@@ -54,6 +54,8 @@ namespace RestFiles.ServiceInterface
                 var newFilePath = Path.Combine(targetDir.FullName, uploadedFile.FileName);
                 uploadedFile.SaveTo(newFilePath);
             }
+
+            return new FilesResponse();
         }
 
         public void Put(Files request)
