@@ -29,19 +29,15 @@ namespace RestFiles.Tests
 
         RestFilesHttpListener appHost;
 
-        [TestFixtureSetUp]
+        [OneTimeSetUp]
         public void TextFixtureSetUp()
         {
             appHost = new RestFilesHttpListener();
             appHost.Init();
         }
 
-        [TestFixtureTearDown]
-        public void TestFixtureTearDown()
-        {
-            if (appHost != null) appHost.Dispose();
-            appHost = null;
-        }
+        [OneTimeTearDown]
+        public void TestFixtureTearDown() => appHost.Dispose();
 
         [SetUp]
         public void OnBeforeEachTest()
