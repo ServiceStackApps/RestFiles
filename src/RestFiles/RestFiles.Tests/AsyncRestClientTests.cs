@@ -42,7 +42,7 @@ namespace RestFiles.Tests
         [SetUp]
         public void OnBeforeEachTest()
         {
-            FilesRootDir = appHost.Config.RootDirectory;
+            FilesRootDir = appHost.AppConfig.RootDirectory;
             if (Directory.Exists(FilesRootDir))
             {
                 Directory.Delete(FilesRootDir, true);
@@ -53,7 +53,7 @@ namespace RestFiles.Tests
             File.WriteAllText(Path.Combine(FilesRootDir, "TESTUPLOAD.txt"), TestUploadFileContents);
         }
 
-        public IRestClientAsync CreateAsyncRestClient()
+        public IServiceClient CreateAsyncRestClient()
         {
             return new JsonServiceClient(WebServiceHostUrl);  //Best choice for Ajax web apps, faster than XML
             //return new XmlServiceClient(WebServiceHostUrl); //Ubiquitous structured data format best for supporting non .NET clients
@@ -162,13 +162,13 @@ namespace RestFiles.Tests
             {
                 var response = (FilesResponse)webEx.ResponseDto;
                 Assert.That(webEx.StatusCode, Is.EqualTo(404));
-                Assert.That(response.ResponseStatus.ErrorCode, Is.EqualTo(typeof(FileNotFoundException).Name));
+                Assert.That(response.ResponseStatus.ErrorCode, Is.EqualTo(nameof(FileNotFoundException)));
                 Assert.That(response.ResponseStatus.Message, Is.EqualTo("Could not find: UnknownFolder"));
             }
         }
 
         [Test]
-        public async Task POST_to_an_existing_file_throws_a_500_NotSupportedException()
+        public void POST_to_an_existing_file_throws_a_500_NotSupportedException()
         {
             var restClient = (IRestClient)CreateAsyncRestClient();
 
@@ -185,7 +185,7 @@ namespace RestFiles.Tests
             {
                 Assert.That(webEx.StatusCode, Is.EqualTo(405));
                 var response = (FilesResponse)webEx.ResponseDto;
-                Assert.That(response.ResponseStatus.ErrorCode, Is.EqualTo(typeof(NotSupportedException).Name));
+                Assert.That(response.ResponseStatus.ErrorCode, Is.EqualTo(nameof(NotSupportedException)));
                 Assert.That(response.ResponseStatus.Message,
                     Is.EqualTo("POST only supports uploading new files. Use PUT to replace contents of an existing file"));
             }
@@ -205,7 +205,7 @@ namespace RestFiles.Tests
             {
                 var response = (FilesResponse)webEx.ResponseDto;
                 Assert.That(webEx.StatusCode, Is.EqualTo(404));
-                Assert.That(response.ResponseStatus.ErrorCode, Is.EqualTo(typeof(FileNotFoundException).Name));
+                Assert.That(response.ResponseStatus.ErrorCode, Is.EqualTo(nameof(FileNotFoundException)));
                 Assert.That(response.ResponseStatus.Message, Is.EqualTo("Could not find: non-existing-file.txt"));
             }
         }
@@ -224,7 +224,7 @@ namespace RestFiles.Tests
                 var response = (FilesResponse)webEx.ResponseDto;
 
                 Assert.That(webEx.StatusCode, Is.EqualTo(404));
-                Assert.That(response.ResponseStatus.ErrorCode, Is.EqualTo(typeof(FileNotFoundException).Name));
+                Assert.That(response.ResponseStatus.ErrorCode, Is.EqualTo(nameof(FileNotFoundException)));
                 Assert.That(response.ResponseStatus.Message, Is.EqualTo("Could not find: non-existing-file.txt"));
             }
         }

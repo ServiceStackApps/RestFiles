@@ -12,16 +12,16 @@ namespace RestFiles.Tests
 		public RestFilesHttpListener()
 			: base("HttpListener Hosts for Unit Tests", typeof(FilesService).Assembly) { }
 
-		public AppConfig Config { get; set; }
+		public AppConfig AppConfig { get; set; }
 
 		public override void Configure(Container container)
 		{
-			this.Config = new AppConfig
+			this.AppConfig = new AppConfig
 			{
 				RootDirectory = "~/App_Data/files/".MapAbsolutePath(),
 				TextFileExtensions = ".txt,.sln,.proj,.cs,.config,.asax".Split(','),
 			};
-			container.Register(this.Config);
+			container.Register(this.AppConfig);
 
 			this.Start(ListeningOn);
 		}
